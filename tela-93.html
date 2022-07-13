@@ -1,0 +1,57 @@
+<div style="height: 60px;width: 100%;">
+    <img style="height: 60px;position: absolute;right: 0px;" src="recursos/imgs/H1.png">
+    <p style="position: absolute;color: white;margin-left: 42px;margin-top: 26px;font-size: 12px;">TÓPICO<strong>
+            2</strong></p>
+    <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
+        PROGRAMAÇÃO DE MEDICAMENTOS E INSUMOS NA APS</p>
+</div>
+<div>
+    <div style="display: flex;">
+        <div style="margin-top: 144px;width: 324px;margin-left: 40px;">
+            <p>VAgora, destacaremos seis obstáculos e os problematizaremos em defesa da transformação dos modos de gerir o processo de
+            trabalho em saúde. </p>
+            <p>Clique no quadro para conhecê-los.</p>
+        </div>
+        <div id="botao_1" class="animate__animated animate__backInRight" style="cursor: pointer;">
+            <img src="recursos/imgs/img-slide-48.svg" style="width: 353px;margin-left: 100px;margin-top: 70px;">
+        </div>
+        <div id="janela_1" style="cursor: pointer; display: none;">
+            <img src="recursos/imgs/img-slide-91.svg" style="width: 785px;left: 60px;top: 20px;position: absolute;">
+        </div>
+    </div>
+</div>
+<footer style="width: 1008px;height: 19px;display: flex;background-color: #1F6D4C;">
+    <div style="margin-top: -8px;display: flex;margin-left: 42px;">
+        <p style="color: white;font-size: 12px;">MÓDULO 3</p>
+        <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">EDUCAÇÃO, INTERSETORIALIDADE E
+            TRABALHO EM REDE NA ESF</p>
+        <p style="margin-left: 50px;color: white;font-size: 12px;">UNIDADE 11</p>
+        <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">TECNOLOGIAS PARA O PROCESSO DE
+            TRABALHO EM REDE</p>
+    </div>
+</footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
