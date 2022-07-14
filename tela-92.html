@@ -15,10 +15,81 @@
         <p>Clique nos nomes e conheça as características desses modelos, segundo
             Campos e Domitti (2007).</p>
         <div style="margin-top: 53px;">
-            <p style="font: normal normal 800 35px/18px Poppins;color: #2F5579;text-align: center;">APOIO MATRICIAL
+            <p id="botao_1"
+                style="font: 800 35px / 18px Poppins; color: rgb(47, 85, 121); text-align: center; cursor: pointer;">
+                APOIO
+                MATRICIAL
             </p>
-            <p style="font: normal normal 800 35px/18px Poppins;color: #2F5579;text-align: center;margin-top: 60px;">
+            <p id="botao_2"
+                style="font: 800 35px / 18px Poppins; color: rgb(47, 85, 121); text-align: center; margin-top: 60px; cursor: pointer;">
                 EQUIPE DE REFERÊNCIA</p>
+        </div>
+    </div>
+    <div>
+        <div class="jan" id="janela_1">
+            <div
+                style="width: 743px;height: 405px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 60px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;height: 320px;">
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;text-align: center;">
+                        APOIO MATRICIAL</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Assegura retaguarda especializada a equipes e profissionais encarregados da atenção a
+                        problemas de saúde. </p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Trata-se
+                        de uma metodologia de trabalho complementar àquela prevista em sistemas hierarquizados, a
+                        saber:
+                        mecanismos de
+                        referência e contrarreferência, protocolos e centros de regulação.</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Oferece tanto retaguarda assistencial quanto
+                        suporte técnico-pedagógico às equipes de referência.</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Depende da construção compartilhada de diretrizes clínicas e
+                        sanitárias entre os componentes de uma equipe de referência e os especialistas que oferecem
+                        apoio matricial.</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Essas
+                        diretrizes devem prever critérios para acionar o apoio e definir o espectro de
+                        responsabilidade
+                        tanto dos diferentes
+                        integrantes da equipe de referência quanto dos apoiadores matriciais.</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
+        </div>
+        <div class="jan" id="janela_2">
+            <div
+                style="width: 743px;height: 359px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 80px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;height: 320px;">
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;text-align: center;">
+                        EQUIPE DE REFERÊNCIA</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Tem a responsabilidade pela condução de um caso individual, familiar ou comunitário. </p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • Objetiva ampliar as
+                        possibilidades de construção de vínculo entre profissionais e usuários.</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • O termo responsabilidade de condução refere-se
+                        à tarefa de encarregar-se da atenção ao longo do tempo, ou seja, de maneira longitudinal, à
+                        semelhança do preconizado
+                        para equipes de saúde da família na APS.</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • O conceito de equipe de referência pressupõe a adoção de lógica análoga para
+                        profissionais que trabalhem em policlínicas ou hospitais.</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                        • É um rearranjo organizacional que busca deslocar o poder das
+                        profissões e corporações de especialistas, reforçando o poder de gestão da equipe
+                        interdisciplinar.</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
         </div>
     </div>
 </div>
@@ -32,3 +103,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

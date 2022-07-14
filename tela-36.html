@@ -21,9 +21,32 @@
             <p>Clique na imagem para conhecê-las.</p>
         </div>
         <div class="animate__animated animate__backInRight">
-            <img src="recursos/imgs/img-slide-36.jpg" style="width: 400px;margin-left: 73px;margin-top: 60px;">
+            <img id="botao_1" src="recursos/imgs/img-slide-36.jpg"
+                style="width: 400px;margin-left: 73px;margin-top: 60px;">
             <p style="font: normal normal normal 10px/18px Poppins;margin-left: 296px;">Foto: Breno Esaki/Agência Saúde
                 DF</p>
+        </div>
+    </div>
+    <div>
+        <div class="jan" id="janela_1">
+            <div
+                style="width: 743px;height: 173px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 170px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">Reduzir
+                        a segmentação e fragmentação da atenção.<br>
+                        Garantir a equidade no acesso.<br>
+                        Aumentar a eficiência e a qualidade dos
+                        serviços de saúde.<br>
+                        Evitar a sobreposição desnecessária, onerosa e iatrogênica em intervenções médicas.<br>
+                        Direcionar os
+                        serviços.<br>
+                        Distribuir os profissionais adequadamente entre os diferentes níveis.</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
         </div>
     </div>
 </div>
@@ -37,3 +60,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

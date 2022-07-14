@@ -22,7 +22,31 @@
                 pontos. Clique na imagem para conhecê-los.</p>
         </div>
         <div class="animate__animated animate__backInRight">
-            <img src="recursos/imgs/img-slide-27.svg" style="width: 322px;margin-left: 89px;margin-top: 33px;">
+            <img id="botao_1" src="recursos/imgs/img-slide-27.svg"
+                style="width: 322px;margin-left: 89px;margin-top: 33px;">
+        </div>
+    </div>
+    <div>
+        <div class="jan" id="janela_1">
+            <div
+                style="width: 743px;height: 124px;background: #2F5579 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 200px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">Como o
+                        usuário é ouvido pelos profissionais no processo assistencial?<br>
+                        Como as tecnologias (e quais) são
+                        acionadas para
+                        atender às necessidades dos usuários em cada ponto de atenção?<br>
+                        Como os usuários e os
+                        profissionais são ouvidos no
+                        processo de gestão da saúde?<br>
+                        Quais valores são produzidos nas práticas em saúde (gestão ou
+                        assistenciais)?</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
         </div>
     </div>
 </div>
@@ -36,3 +60,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

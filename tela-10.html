@@ -25,17 +25,65 @@
     <p>Clique nos
         nomes para conhecê-las.</p>
     <div style="width: 500px;display: flex;justify-content: space-between;margin-top: 47px;margin-left: 152px;">
-        <div
+        <div id="botao_1"
             style="width: 97px;height: 42px;background: #FFA800 0% 0% no-repeat padding-box;border-radius: 10px; display: flex; justify-content: center; align-items: center;">
             <p style="font: normal normal bold 14px/18px Poppins;color: #FFFFFF;">Dura</p>
         </div>
-        <div
+        <div id="botao_2"
             style="width: 117px;height: 42px;background: #2F5579 0% 0% no-repeat padding-box;border-radius: 10px; display: flex; justify-content: center; align-items: center;">
             <p style="font: normal normal bold 14px/18px Poppins;color: #FFFFFF;">Leve-Dura</p>
         </div>
-        <div
+        <div id="botao_3"
             style="width: 77px;height: 42px;background: #54BFCD 0% 0% no-repeat padding-box;border-radius: 10px; display: flex; justify-content: center; align-items: center;">
             <p style="font: normal normal bold 14px/18px Poppins;color: #FFFFFF;">Leve</p>
+        </div>
+    </div>
+    <div>
+        <div class="jan" id="janela_1">
+            <div
+                style="width: 743px;height: 117px;background: #FFA800 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 200px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">DURA</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">
+                        Equipamentos tecnológicos do tipo máquinas, normas, estruturas organizacionais etc.</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
+        </div>
+        <div class="jan" id="janela_2">
+            <div
+                style="width: 743px;height: 135px;background: #2F5579 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 200px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">
+                        LEVE-DURA</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">
+                        Saberes bem estruturados que operam no processo de trabalho em saúde, como a clínica médica, a
+                        epidemiologia etc.</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
+        </div>
+        <div class="jan" id="janela_3">
+            <div
+                style="width: 743px;height: 130px;background: #54BFCD 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 200px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <div
+                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">LEVE</p>
+                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">
+                        Tecnologias de relações do tipo produção de vínculo, acolhimento e gestão como uma forma de
+                        governar processos de
+                        trabalho etc.</p>
+                </div>
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                    x</p>
+            </div>
         </div>
     </div>
 </div>
@@ -49,3 +97,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
