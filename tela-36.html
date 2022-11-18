@@ -5,46 +5,27 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         TECNOLOGIAS PARA PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
-<div>
-    <div style="display: flex;">
-        <div style="width: 323px;margin-left: 40px;margin-top: 81px;">
-            <p>O enfoque na construção de redes com serviços integrados e cuidados coordenados assenta, nas equipes
-                de APS, o
-                protagonismo para reorientação dos sistemas de saúde nos interstícios da rede (ORGANIZACIÓN
-                PANAMERICANA DE LA SALUD,
-                2009). Entre os argumentos em defesa da integração e coordenação para organizações dos sistemas de
-                serviços de saúde,
-                destacam-se algumas necessidades. </p>
-            <p>Clique na imagem para conhecê-las.</p>
-        </div>
-        <div class="animate__animated animate__backInRight">
-            <img id="botao_1" src="recursos/imgs/img-slide-36.jpg"
-                style="width: 400px;margin-left: 73px;margin-top: 60px;">
-            <p style="font: normal normal normal 10px/18px Poppins;margin-left: 296px;">Foto: Breno Esaki/Agência Saúde
-                DF</p>
-        </div>
-    </div>
-    <div>
-        <div class="jan" id="janela_1">
-            <div
-                style="width: 743px;height: 173px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 170px;left: 80px;align-items: center;justify-content: space-evenly;">
-                <div
-                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
-                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">Reduzir
-                        a segmentação e fragmentação da atenção.<br>
-                        Garantir a equidade no acesso.<br>
-                        Aumentar a eficiência e a qualidade dos
-                        serviços de saúde.<br>
-                        Evitar a sobreposição desnecessária, onerosa e iatrogênica em intervenções médicas.<br>
-                        Direcionar os
-                        serviços.<br>
-                        Distribuir os profissionais adequadamente entre os diferentes níveis.</p>
-                </div>
-                <p
-                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
-                    x</p>
-            </div>
-        </div>
+<div style="margin-top: 67px;margin-left: 52px;width: 785px;">
+
+    <p>Todavia, a mera existência de diferentes serviços e de distintos profissionais não conforma uma rede, bem
+        como a
+        integração não se dá por esforços unilaterais de alguns profissionais, nem mesmo por determinação da gestão.
+    </p>
+    <p>A
+        integração dos serviços de saúde é a contraposição aos modelos fragmentados, ou seja, é a busca por
+        consubstanciar uma
+        organicidade aos sistemas de saúde que se sustenta em três eixos:</p>
+    <div style="display: flex;flex-direction: row;margin-top: 43px;margin-left: -20px;">
+        <img style="width: 67px;height: 47px;opacity: 0.08;" src="recursos/imgs/quote-1.png">
+        <p
+            style="text-align: left;font: normal normal 600 14px/18px Poppins;color: #294667;letter-spacing: 0px;width: 613px;padding-left: 40px;">
+            a oferta de serviço, de forma contínua, por meio de vários pontos de atenção à saúde; a integração
+            desses pontos de
+            atenção à saúde, por meio de um sistema de gestão da clínica, e a existência de uma população adscrita,
+            cuja saúde é de
+            responsabilidade inequívoca do sistema (MENDES, 2001, p. 72).</p>
+        <img style="width: 64px;height: 46px;opacity: 0.08;margin-top: 50px;margin-left: 20px;"
+            src="recursos/imgs/quote-2.png">
     </div>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #1F6D4C;">
@@ -57,28 +38,3 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
-<script>
-    $(() => {
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
-        $(document).find('[id^=btn]').hide();
-        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
-            $(botao).css('cursor', 'pointer');
-            $(botao).hover(() => {
-                $(document).find(`[id=btn_${index + 1}_2]`).show();
-            });
-            $(botao).mouseleave(() => {
-                $(document).find('[id^=btn]').hide();
-            });
-            $(botao).click(() => {
-                apagarJanelas();
-                $(janelas[index]).fadeIn();
-            })
-        })
-        function apagarJanelas() {
-            janelas.map((index, janela) => {
-                $(janela).hide();
-            })
-        }
-    })
-</script>

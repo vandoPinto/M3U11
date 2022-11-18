@@ -5,46 +5,29 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         TECNOLOGIAS PARA PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
-<div>
-    <div style="display: flex;">
-        <div style="width: 324px;margin-left: 40px;margin-top: 63px;">
-            <p>Na lógica de uma rede de atenção, o seu elemento constitutivo modelo de atenção confere a qualidade
-                da rede ou, em
-                outras palavras, dá a direcionalidade predominante no modo de produzir o cuidado. Logo, em cada
-                ponto de atenção da
-                rede, como na APS, nos serviços ambulatoriais especializados, nos hospitais etc., está sendo
-                operacionalizado o processo
-                de trabalho por cada trabalhador da saúde em interlocução com os usuários.</p>
-            <p>Nesses casos, necessitamos identificar alguns
-                pontos. Clique na imagem para conhecê-los.</p>
-        </div>
-        <div class="animate__animated animate__backInRight">
-            <img id="botao_1" src="recursos/imgs/img-slide-27.svg"
-                style="width: 322px;margin-left: 89px;margin-top: 33px;">
+<div style="margin-top: 43px;margin-left: 40px;width: 324px; display: flex;">
+    <div>
+        <p>A rede de atenção, não obstante os diferentes serviços de saúde, é, antes de tudo, um conjunto de pessoas
+            em sinergia ou
+            em disputa por diferentes modos de produzir cuidado. </p>
+        <p>Para Franco (2006, p. 459):</p>
+        <div style="display: flex;flex-direction: row;margin-top: 19px;margin-left: -20px;">
+            <img style="width: 33px;height: 24px;opacity: 0.08;" src="recursos/imgs/quote-1.png">
+            <p
+                style="font: normal normal 600 14px/18px Poppins;letter-spacing: 0px;color: #294667;width: 227px;padding-left: 40px;font-size: 12px;">
+                Essa forma de condução de processos se repete para todos os níveis de produção, é social e
+                subjetivamente determinada e
+                vai configurando uma certa micropolítica, que é entendida como o agir cotidiano dos sujeitos, na
+                relação entre si e no
+                cenário em que se encontra.</p>
+            <img style="width: 33px;height: 24px;opacity: 0.08;margin-top: 150px;margin-left: 10px;"
+                src="recursos/imgs/quote-2.png">
         </div>
     </div>
-    <div>
-        <div class="jan" id="janela_1">
-            <div
-                style="width: 743px;height: 124px;background: #2F5579 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 200px;left: 80px;align-items: center;justify-content: space-evenly;">
-                <div
-                    style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;align-items: center;">
-                    <p style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;">Como o
-                        usuário é ouvido pelos profissionais no processo assistencial?<br>
-                        Como as tecnologias (e quais) são
-                        acionadas para
-                        atender às necessidades dos usuários em cada ponto de atenção?<br>
-                        Como os usuários e os
-                        profissionais são ouvidos no
-                        processo de gestão da saúde?<br>
-                        Quais valores são produzidos nas práticas em saúde (gestão ou
-                        assistenciais)?</p>
-                </div>
-                <p
-                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
-                    x</p>
-            </div>
-        </div>
+    <div class="animate__animated animate__backInRight" style="cursor: pointer;">
+        <img src="recursos/imgs/img-slide-28.jpg" style="width: 400px;margin-top: 32px;margin-left: 99px;">
+        <p style="font: normal normal normal 10px/18px Poppins;margin-left: 320px;">Foto: Breno Esaki/Agência Saúde DF
+        </p>
     </div>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #1F6D4C;">
@@ -57,28 +40,3 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
-<script>
-    $(() => {
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
-        $(document).find('[id^=btn]').hide();
-        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
-            $(botao).css('cursor', 'pointer');
-            $(botao).hover(() => {
-                $(document).find(`[id=btn_${index + 1}_2]`).show();
-            });
-            $(botao).mouseleave(() => {
-                $(document).find('[id^=btn]').hide();
-            });
-            $(botao).click(() => {
-                apagarJanelas();
-                $(janelas[index]).fadeIn();
-            })
-        })
-        function apagarJanelas() {
-            janelas.map((index, janela) => {
-                $(janela).hide();
-            })
-        }
-    })
-</script>

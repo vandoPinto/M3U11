@@ -5,28 +5,20 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         MODOS DE PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
-<div style="margin-top: 29px;margin-left: 54px;width: 780px;">
-    <p>Em 2002, a pesquisadora estadunidense Bárbara Starfield realizou uma extensa revisão acerca das tentativas de
-        inúmeros
-        estudos para definir uma abordagem para medição (capacidade e desempenho) da APS de alta qualidade, no
-        contexto dos
-        sistemas de saúde. A autora desenvolveu, a partir de avaliações em países de alta renda, uma definição para
-        a APS:</p>
-    <div class="animate__animated animate__backInRight"
-        style="margin-top: 28px;margin-left: 42px;display: flex;flex-direction: row;width: 697px;height: 197px;top: 139px;right: 15px;background-color: #F1F9F6;border-radius: 10px;">
-        <img src="recursos/imgs/icon-conceito.svg" style="width: 64px;height: 64px;margin-top: 26px;margin-left: 33px;">
-        <div style="display: initial;margin-left: 22px;margin-top: 10px;width: 554px;">
-            <p style="font-weight: bold;color: #1F6D4C;font-size: 15px;">CONCEITO</p>
-            <p style="font-size: 12px;">Sustentada por meio de funções que, combinadas, são
-                peculiares à APS: serviço de primeiro contato; centrado na pessoa e
-                não na enfermidade; cuidado ao longo do tempo; atenção a todos os casos; e coordenação e integração
-                à atenção provida
-                por outros parceiros do sistema (quando a APS não pode resolver).</p>
-            <p style="font-size: 12px;margin-left: -80px;width: 663px;">Além disso, temos outras
-                características que a APS compartilha com os demais níveis do sistema, mas que, ainda que
-                imprescindíveis à APS, não são distintivas: responsabilidade pelo acesso, qualidade e custos;
-                atenção à prevenção,
-                tratamento e reabilitação; e trabalho em equipe.</p>
+<div>
+    <div style="display: flex;">
+        <div style="width: 360px;margin-left: 40px;margin-top: 99px;">
+            <p>Tais características da APS abrangente definem os seus atributos essenciais e derivados. Apesar de
+                bastante difundidos,
+                ainda costumam causar certa confusão e, por isso, vamos sintetizá-los aqui. Conhecer os atributos da
+                APS é um passo
+                fundamental para qualificar o processo de trabalho na gestão e na assistência. </p>
+            <p>Clique no quadro e conheça os atributos
+                da Atenção Primária à Saúde.</p>
+        </div>
+        <div class="animate__animated animate__backInRight" style="cursor: pointer;">
+            <a href="recursos/pdf/Quadro1_AtributosAPS_Tela61.pdf" target="_blank"><img
+                    src="recursos/imgs/img-slide-61.svg" style="width: 353px;margin-left: 77px;margin-top: 59px;"></a>
         </div>
     </div>
 </div>
@@ -40,3 +32,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

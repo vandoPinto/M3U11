@@ -6,20 +6,17 @@
         MODOS DE PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
 <div>
-    <div style="display: flex;">
-        <div style="width: 360px;margin-left: 40px;margin-top: 99px;">
-            <p>Tais características da APS abrangente definem os seus atributos essenciais e derivados. Apesar de
-                bastante difundidos,
-                ainda costumam causar certa confusão e, por isso, vamos sintetizá-los aqui. Conhecer os atributos da
-                APS é um passo
-                fundamental para qualificar o processo de trabalho na gestão e na assistência. </p>
-            <p>Clique no quadro e conheça os atributos
-                da Atenção Primária à Saúde.</p>
-        </div>
-        <div class="animate__animated animate__backInRight" style="cursor: pointer;">
-            <a href="recursos/pdf/Quadro1_AtributosAPS_Tela61.pdf" target="_blank"><img
-                    src="recursos/imgs/img-slide-61.svg" style="width: 353px;margin-left: 77px;margin-top: 59px;"></a>
-        </div>
+    <div style="margin-left: 50px;margin-top: 135px;width: 785px;">
+        <p>Como visto anteriormente, as redes de atenção devem ter a APS como lócus principal e ponto regular de
+            entrada. </p>
+        <p>A questão
+            é que não bastam a existência de equipes de APS e as altas coberturas de APS para que exista,
+            adequadamente, a
+            resolutividade de cuidado. Isso porque, para ser de fato centro intercambiador na rede de atenção, a APS
+            necessita ser
+            uma APS abrangente, ou seja, seus atributos precisam ser fortes e estarem presentes no processo de
+            trabalho em saúde
+            para permitir alto desempenho das práticas.</p>
     </div>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #1F6D4C;">
@@ -32,28 +29,3 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
-<script>
-    $(() => {
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
-        $(document).find('[id^=btn]').hide();
-        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
-            $(botao).css('cursor', 'pointer');
-            $(botao).hover(() => {
-                $(document).find(`[id=btn_${index + 1}_2]`).show();
-            });
-            $(botao).mouseleave(() => {
-                $(document).find('[id^=btn]').hide();
-            });
-            $(botao).click(() => {
-                apagarJanelas();
-                $(janelas[index]).fadeIn();
-            })
-        })
-        function apagarJanelas() {
-            janelas.map((index, janela) => {
-                $(janela).hide();
-            })
-        }
-    })
-</script>

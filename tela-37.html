@@ -5,27 +5,63 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         TECNOLOGIAS PARA PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
-<div style="margin-top: 67px;margin-left: 52px;width: 785px;">
-
-    <p>Todavia, a mera existência de diferentes serviços e de distintos profissionais não conforma uma rede, bem
-        como a
-        integração não se dá por esforços unilaterais de alguns profissionais, nem mesmo por determinação da gestão.
-    </p>
-    <p>A
-        integração dos serviços de saúde é a contraposição aos modelos fragmentados, ou seja, é a busca por
-        consubstanciar uma
-        organicidade aos sistemas de saúde que se sustenta em três eixos:</p>
-    <div style="display: flex;flex-direction: row;margin-top: 43px;margin-left: -20px;">
-        <img style="width: 67px;height: 47px;opacity: 0.08;" src="recursos/imgs/quote-1.png">
-        <p
-            style="text-align: left;font: normal normal 600 14px/18px Poppins;color: #294667;letter-spacing: 0px;width: 613px;padding-left: 40px;">
-            a oferta de serviço, de forma contínua, por meio de vários pontos de atenção à saúde; a integração
-            desses pontos de
-            atenção à saúde, por meio de um sistema de gestão da clínica, e a existência de uma população adscrita,
-            cuja saúde é de
-            responsabilidade inequívoca do sistema (MENDES, 2001, p. 72).</p>
-        <img style="width: 64px;height: 46px;opacity: 0.08;margin-top: 50px;margin-left: 20px;"
-            src="recursos/imgs/quote-2.png">
+<div>
+    <div style="display: flex;">
+        <div style="width: 324px;margin-left: 40px;margin-top: 126px;">
+            <p>Ao sintetizar características de uma atenção integrada de saúde no sistema canadense, Leatt, Pink e
+                Guerriere (2000)
+                listam alguns critérios que os serviços devem ter/ser para o usuário. </p>
+            <p>Clique na imagem e conheça esses critérios.</p>
+        </div>
+        <div id="botao_1" class="animate__animated animate__backInRight" style="cursor: pointer;">
+            <img src="recursos/imgs/img-slide-38.svg" style="width: 417px;margin-top: 88px;margin-left: 41px;">
+        </div>
+        <div>
+            <div class="jan" id="janela_1">
+                <div
+                    style="width: 743px;height: 462px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 20px;left: 80px;align-items: center;justify-content: space-evenly;">
+                    <div
+                        style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;height: 470px;">
+                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;">
+                            • O usuário não precisa repetir sua história a cada atendimento.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                            • Não precisa se submeter a repetições de exames a cada
+                            nova consulta.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
+                            • O usuário não é a única fonte de informação para que o médico ou outro profissional
+                            conheça a sua
+                            história de utilização de serviços, procedimentos e medicamentos.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • O usuário não se submete a um nível de atenção
+                            inadequado por incapacidade de atendimento em outro nível.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • Dispõe de 24 horas de acesso a um estabelecimento ligado à
+                            APS.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • Recebe informação clara e precisa sobre a qualidade da assistência e resultados
+                            esperados
+                            das opções
+                            terapêuticas, permitindo-lhe fazer escolhas esclarecidas.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • Pode marcar uma consulta ou receber um resultado por
+                            telefone.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • Tem opções de escolha para consultas na APS, e os profissionais devem dispor de tempo
+                            suficiente nas
+                            consultas de primeiro nível.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • É rotineiramente contatado para prevenir complicações de problemas crônicos.</p>
+                        <p style="font: normal normal normal 14px/18px Poppins;margin-top: 0px;color: #FFFFFF;">
+                            • Recebe
+                            informações sobre sua doença, apoio domiciliar e em autocuidado que maximize a sua
+                            autonomia.</p>
+                    </div>
+                    <p
+                        style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
+                        x</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #1F6D4C;">
@@ -38,3 +74,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

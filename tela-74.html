@@ -5,29 +5,28 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         MODOS DE PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
-<div style="margin-top: 37px;margin-left: 52px;width: 785px;">
-    <div class="animate__animated animate__backInRight"
-        style="margin-top: 46px;margin-left: 48px;display: flex;flex-direction: row;width: 688px;height: 162px;top: 139px;right: 15px;background-color: #F1F9F6;border-radius: 10px;">
-        <img src="recursos/imgs/importante-icon.svg"
-            style="width: 61px;height: 61px;margin-top: 50px;margin-left: 30px;">
-        <div style="display: initial;margin-left: 11px;margin-top: 0px;width: 554px;">
-            <p style="font-weight: bold;color: #1F6D4C;font-size: 15px;">IMPORTANTE</p>
-            <p style="font-size: 12px;">A aposta que fazemos e que estamos convidando à reflexão é a
-                necessidade de
-                transformação das práticas por meio da
-                transformação das pessoas. Seria essa uma tarefa ainda possível? </p>
-            <p style="font-size: 12px;">É importante lembrar que os atributos não são inerentes
-                à APS, mas são resultantes dos modos do processo de trabalho dos profissionais e sua relação com a
-                comunidade.</p>
+<div>
+    <div style="display: flex;margin-top: 135px;margin-left: 40px;">
+        <div style="width: 360px;">
+            <p>Esta figura situa a APS na rede de atenção e suas interconexões para viabilizar a produção do cuidado
+                de modo contínuo,
+                abrangente e centrado nas pessoas.</p>
+            <p>Clique para ampliar.</p>
+        </div>
+        <div class="animate__animated animate__backInRight">
+            <img id="botao_1" src="recursos/imgs/img-slide-77.png"
+                style="width: 401px; margin-left: 30px; margin-top: -60px; cursor: pointer;">
+        </div>
+        <div class="jan" id="janela_1" style="cursor: pointer; display: none;">
+            <div
+                style="width: 743px;height: 117px;border-radius: 12px;display: flex;position: absolute;top: 200px;left: 80px;align-items: center;justify-content: space-evenly;">
+                <img src="recursos/imgs/img-slide-77.png" style="width: 720px;margin-left: -20px;margin-top: -21px;">
+                <p
+                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -209px;left: 790px;">
+                    x</p>
+            </div>
         </div>
     </div>
-    <p style="margin-top: 40px;width: 785px;">Uma APS abrangente é uma APS com profissionais motivados, tecnicamente
-        preparados e com disponibilidade de recursos
-        para
-        desenvolvimento da assistência necessária à população. </p>
-    <p>Do mesmo modo, uma rede de atenção integrada é dependente de uma
-        APS abrangente e, ao mesmo tempo, de profissionais engajados com a produção do cuidado em todos os pontos de
-        atenção.</p>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #1F6D4C;">
     <div style="margin-top: -8px;display: flex;margin-left: 42px;">
@@ -39,3 +38,28 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

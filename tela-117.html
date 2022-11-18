@@ -5,63 +5,23 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         SUSTENTABILIDADE SOCIAL DAS REDES E O ENGAJAMENTO COMUNITÁRIO</p>
 </div>
-<div style="margin-top: 37px;margin-left: 40px;width: 820px;">
-    <p>Para Organização Pan-Americana de Saúde (2008), a participação transforma pessoas em parceiros ativos na
-        tomada de
-        decisões sobre recursos, definição de prioridades e garantia de responsabilização. </p>
-    <p>Clique nas imagens e veja como se dá
-        essa participação nos níveis individual e da sociedade.</p>
-    <div style="margin-top: 64px;margin-left: 109px;">
-        <img id="botao_1" src="recursos/imgs/img.1-slide-118.svg" style="width: 233px; cursor: pointer;">
-        <img id="botao_2" src="recursos/imgs/img.2-slide-118.svg"
-            style="width: 233px; margin-left: 86px; cursor: pointer;">
-    </div>
-    <div>
-        <div class="jan" id="janela_1">
-            <div
-                style="width: 743px;height: 173px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 180px;left: 80px;align-items: center;justify-content: space-evenly;">
-                <div style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;">
-                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;text-align: center;">
-                        INDIVIDUAL</p>
-                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
-                        No nível individual, as pessoas devem estar aptas a tomar decisões livres, após estarem
-                        plenamente informadas acerca de
-                        sua própria saúde e de suas famílias, com espírito de autodeterminação e confiança.</p>
-                </div>
-                <p
-                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
-                    x</p>
-            </div>
+<div>
+    <div style="display: flex;">
+        <div style="margin-left: 40px;width: 360px;margin-top: 81px;">
+            <p>Em recente revisão sobre o papel do engajamento comunitário, a ação dos movimentos sociais e da
+                sociedade civil para o
+                enfrentamento de emergências em saúde como a covid-19 (SANTOS <i>et al</i>., 2021), constatou-se que, nos
+                contextos
+                internacional e nacional, a governança comunitária subsidiada pelo fortalecimento de canais de
+                comunicação fomentados
+                por instituições e/ou influenciadores sociais pode contribuir para ampliação do engajamento de
+                coletivos organizados
+                como retórica e prática ético-política comprometida com a cidadania.</p>
         </div>
-        <div class="jan" id="janela_2">
-            <div
-                style="width: 743px;height: 336px;background: #1B8992 0% 0% no-repeat padding-box;border-radius: 12px;display: flex;position: absolute;top: 90px;left: 80px;align-items: center;justify-content: space-evenly;">
-                <div style="width: 689px;display: flex;flex-direction: column;justify-content: space-between;">
-                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;text-align: center;">
-                        SOCIEDADE</p>
-                    <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
-                        No nível da sociedade, a participação na saúde é uma faceta para a população pobre,
-                        funcionando
-                        para:</p>
-                    <div>
-                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
-                            • usar essas metas a fim de direcionar recursos adicionais às necessidades dos
-                            desfavorecidos;</p>
-                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
-                            • melhorar a educação e
-                            as iniciativas inclusivas para ajudar os cidadãos a compreender seus direitos;</p>
-                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
-                            • garantir a participação ativa dos
-                            cidadãos no planejamento e na fiscalização do sistema de saúde;</p>
-                        <p style="font: normal normal normal 14px/18px Poppins;color: #FFFFFF;margin-top: 0px;">
-                            • tomar medidas concretas para combater os determinantes
-                            sociais geradores de iniquidades em saúde.</p>
-                    </div>
-                </div>
-                <p
-                    style="font: normal normal normal 14px/18px Poppins;letter-spacing: 0px;color: #FFFFFF;position: absolute;top: -9px;left: 730px;">
-                    x</p>
-            </div>
+        <div class="animate__animated animate__backInRight">
+            <img src="recursos/imgs/img-slide-120.jpg" style="width: 400px;margin-left: 46px;margin-top: 56px;">
+            <p style="font: normal normal normal 10px/18px Poppins;margin-left: 254px;">Foto: Sandro Araújo/Agência
+                Saúde DF</p>
         </div>
     </div>
 </div>
@@ -75,28 +35,3 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
-<script>
-    $(() => {
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
-        $(document).find('[id^=btn]').hide();
-        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
-            $(botao).css('cursor', 'pointer');
-            $(botao).hover(() => {
-                $(document).find(`[id=btn_${index + 1}_2]`).show();
-            });
-            $(botao).mouseleave(() => {
-                $(document).find('[id^=btn]').hide();
-            });
-            $(botao).click(() => {
-                apagarJanelas();
-                $(janelas[index]).fadeIn();
-            })
-        })
-        function apagarJanelas() {
-            janelas.map((index, janela) => {
-                $(janela).hide();
-            })
-        }
-    })
-</script>

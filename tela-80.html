@@ -1,3 +1,12 @@
+<style>
+    .janela {
+        display: none;
+    }
+
+    .botao {
+        cursor: pointer;
+    }
+</style>
 <div style="height: 60px;width: 100%;">
     <img style="height: 60px;position: absolute;right: 0px;" src="recursos/imgs/H1.png">
     <p style="position: absolute;color: white;margin-left: 42px;margin-top: 26px;font-size: 12px;">TÓPICO<strong>
@@ -6,29 +15,70 @@
         MODOS DE PRODUÇÃO DO CUIDADO EM REDE</p>
 </div>
 <div>
-    <div style="display: flex;margin-top: 50px;margin-left: 31px;">
-        <div style="width: 320px;">
-            <p>Os problemas na APS apresentam um paradoxo:</p>
-            <div style="margin-left: 22px;">
-                <p>Por um lado, o debate acerca da clínica degradada e a falta de aderência/compromisso profissional
-                    com
-                    o trabalho
-                    comprometem as ações de saúde. </p>
-                <p>Por outro, há um conjunto de profissionais que, mesmo quando deseja e/ou exerce uma
-                    prática mais alinhada com o que se espera para garantir a centralidade do cuidado, é interditado
-                    por
-                    condições de
-                    infraestrutura de trabalho ou barreiras burocráticas e administrativas.</p>
-                <div>
-                    <img src="recursos/imgs/Icon_awesome-dot-circle-1.svg"
-                        style="position: absolute;top: 178px;margin-left: -14px;">
-                    <img src="recursos/imgs/Icon_awesome-dot-circle-1.svg"
-                        style="position: absolute;top: 275px;margin-left: -14px;">
+    <div style="margin-left: 50px;margin-top: 60px;width: 811px;">
+        <p>Segundo Campos (2003), há três semblantes sobre os quais a clínica se apresenta:</p>
+    </div>
+    <div style="margin-left: 140px;margin-top: 34px;">
+        <div class="boxs">
+            <div class="botao"
+                style="display: flex;height: 26px;width: 598px;background-color: #1F6D4C;color: white;justify-content: space-between;">
+                <p style="margin: 5px;font-size: 12px;">Clínica oficial</p>
+                <img src="recursos/imgs/Icon ionic-ios-arrow-down.svg"
+                    style="margin-top: 3px;margin-right: 6px;width: 15px;">
+            </div>
+            <div class="janela" style="display: none;">
+                <div
+                    style="width: 598px;height: 100px;background: #FFFFFFDB 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px #00000029;margin-top: -10px;text-align: center;">
+                    <p
+                        style="font-size: 12px;font: normal normal normal 12px/13px Poppins;color: #4B4B4B;padding-top: 20px;padding-left: 16px;">
+                        Aborda-se mais a doença que o indivíduo, e, mesmo quando esse é considerado, pensa-se em um
+                        indivíduo fragmentado, um ser composto de partes, que apenas, teoricamente, guardariam
+                        alguma noção de interdependência. Esse objeto reduzido autorizaria a multiplicação de
+                        especialidades, que terminaram por fragmentar, em grau insuportável, o processo de trabalho
+                        em saúde.</p>
                 </div>
             </div>
         </div>
-        <div class="animate__animated animate__backInRight">
-            <img src="recursos/imgs/img-slide-81.svg" style="width: 364px;margin-left: 71px;margin-top: -20px;">
+        <div class="boxs">
+            <div class="botao"
+                style="display: flex;height: 26px;width: 598px;background-color: #F5F9F7;color: #1F6D4C;justify-content: space-between;">
+                <p style="margin: 5px;font-size: 12px;">Clínica degradada</p>
+                <img src="recursos/imgs/Icon ionic-ios-arrow-down-1.svg"
+                    style="margin-top: 3px;margin-right: 6px;width: 15px;">
+            </div>
+            <div class="janela" style="display: none;">
+                <div
+                    style="width: 598px;height: 105px;background: #FFFFFFDB 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px #00000029;margin-top: -10px;text-align: center;">
+                    <p
+                        style="font-size: 12px;font: normal normal normal 12px/13px Poppins;color: #4B4B4B;padding-top: 20px;padding-left: 36px;width: 530px;">
+                        Resultante de uma mescla de uma política de saúde inadequada com um comportamento alienado
+                        de profissionais de saúde que a praticam, atendendo os casos de forma padronizada, quase que
+                        independentemente da gravidade e das necessidades de cada um dos pacientes. Há, portanto,
+                        clínica degradada por interesses econômicos ou por desequilíbrio muito pronunciado de poder.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="boxs">
+            <div class="botao ativo"
+                style="display: flex;height: 26px;width: 598px;background-color: #1F6D4C;color: white;justify-content: space-between;">
+                <p style="margin: 5px;font-size: 12px;">Clínica ampliada</p>
+                <img src="recursos/imgs/Icon ionic-ios-arrow-down.svg"
+                    style="margin-top: 3px;margin-right: 6px;width: 15px;">
+            </div>
+            <div class="janela" style="display: none;">
+                <div
+                    style="width: 598px;height: 110px;background: #FFFFFFDB 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px #00000029;margin-top: -10px;text-align: center;">
+                    <p
+                        style="font-size: 12px;font: normal normal normal 12px/13px Poppins;color: #4B4B4B;padding-top: 20px;padding-left: 16px;">
+                        Seu objeto inclui a doença, o contexto e o próprio sujeito. Traz uma crítica dialética à
+                        clínica oficial e busca construir alternativas concretas de saberes e práticas. Critica a
+                        fragmentação decorrente da especialização progressiva, mas reconhece a importância do avanço
+                        de saberes e tecnologias. Introduz os conceitos de “campo” e “núcleo” de saberes e
+                        responsabilidades, buscando articulá-los às noções de equipe de referência e de apoio
+                        especializado matricial.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -42,3 +92,18 @@
             TRABALHO EM REDE</p>
     </div>
 </footer>
+<script>
+    $(document).ready(function () {
+        $('.boxs .botao').click(function () {
+            $('.janela').slideUp();
+            if ($(this).attr('class') != 'ativo') {
+                $('.boxs .botao').removeClass('ativo');
+                $(this).addClass('ativo');
+                $(this).next().slideDown();
+            } else {
+                $(this).next().slideUp();
+                $(this).removeClass('ativo');
+            }
+        });
+    });
+</script>
